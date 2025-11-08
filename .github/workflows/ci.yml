@@ -41,6 +41,7 @@ jobs:
     needs: test
     if: needs.test.result == 'success' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master')
     runs-on: ubuntu-latest
+    environment: production
 
     env:
       VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
